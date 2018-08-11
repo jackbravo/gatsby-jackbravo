@@ -4,7 +4,7 @@ import React from 'react'
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
-import profilePic from './profile-pic.jpg'
+import profilePic from './gaceta_1.png'
 import { rhythm } from '../utils/typography'
 
 class Bio extends React.Component {
@@ -18,7 +18,7 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={`Kyle Mathews`}
+          alt={`Joaquín Bravo Contreras`}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
@@ -27,11 +27,9 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Written by <strong>Kyle Mathews</strong> who lives and works in San
-          Francisco building useful things.{' '}
-          <a href="https://twitter.com/kylemathews">
-            You should follow him on Twitter
-          </a>
+          Soy un desarrollador mexicano. Soy fan del software libre, sobre todo aplicado al Internet.
+          Juego futbol cada que puedo. Me gusta andar en bici y leer (cuando mis hijos me dejan).
+          Todavía creo en la buena voluntad de las personas y todavía más con mi linda esposa Lix =).
         </p>
       </div>
     )

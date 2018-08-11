@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'La gaceta de la cabeza',
+    author: 'Joaquín Bravo Contreras',
+    description: 'Sobre tecnología y otras curiosidades.',
+    siteUrl: 'https://joaquin.axai.mx/',
   },
-  pathPrefix: '/gatsby-starter-blog',
+  pathPrefix: '/',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -48,8 +48,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `La gaceta de la cabeza`,
+        short_name: `Blog de Joaquín`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

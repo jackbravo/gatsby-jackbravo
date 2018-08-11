@@ -26,7 +26,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Gatsby Starter Blog
+            La gaceta de la cabeza
           </Link>
         </h1>
       )
@@ -47,7 +47,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Gatsby Starter Blog
+            La gaceta de la cabeza
           </Link>
         </h3>
       )
