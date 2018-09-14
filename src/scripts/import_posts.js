@@ -1,7 +1,12 @@
 const sqlite3 = require('sqlite3').verbose();
 const fs = require('fs');
 
-let db = new sqlite3.Database('joaquin.db', sqlite3.OPEN_READONLY, (err) => {
+if (process.argv.length < 3) {
+  usage();
+  process.exit();
+}
+
+let db = new sqlite3.Database(process.argv[2], sqlite3.OPEN_READONLY, (err) => {
   if (err) {
     return console.error(err.message);
   }
@@ -42,6 +47,12 @@ db.serialize(() => {
 });
 
 db.close();
+
+function usage() {
+  const path = require('path');
+  const scriptName = path.basename(__filename);
+  console.log('node ' + scriptName + ' <database.sqlite>');
+}
 
 function slugify(string) {
   const a = 'àáäâãåèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;'
