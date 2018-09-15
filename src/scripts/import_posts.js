@@ -1,4 +1,4 @@
-const sqlite3 = require('sqlite3').verbose();
+const Database = require('better-sqlite3');
 const fs = require('fs');
 
 if (process.argv.length < 3) {
@@ -6,66 +6,53 @@ if (process.argv.length < 3) {
   process.exit();
 }
 
-const db = new sqlite3.Database(process.argv[2], sqlite3.OPEN_READONLY, (err) => {
-  if (err) {
-    console.error(err.message);
-    process.exit();
-  }
-});
+const db = new Database(process.argv[2], {readonly: true});
 
-db.each(`SELECT n.nid, n.title, n.created, b.body_value, n.status FROM node n
-  INNER JOIN field_data_body b ON b.entity_id = n.nid`, (err, row) => {
-  if (err) {
-    console.error('Error at each SELECT nid', err.message);
-  }
+const rows = db.prepare(`SELECT n.nid, n.title, n.created, b.body_value, n.status FROM node n
+  INNER JOIN field_data_body b ON b.entity_id = n.nid`).all();
+rows.forEach(row => {
   const slug = slugify(row.title);
   const folder = row.status ? '/../pages/' : '/../../drafts/';
   const path = __dirname + folder + slug;
   const date = new Date(row.created * 1000);
-  let aliases = [];
-  db.each(`SELECT alias FROM url_alias WHERE source = 'node/' || ?`, [row.nid], (err, row) => {
-    if (err) {
-      console.error('Error at each SELECT alias', err.message);
-      return;
+
+  const aliases = db.prepare(`SELECT alias FROM url_alias WHERE source = 'node/' || ?`)
+    .pluck()
+    .all(row.nid);
+
+  const tags = db.prepare(`SELECT td.name FROM taxonomy_index ti
+    INNER JOIN taxonomy_term_data td ON td.tid = ti.tid AND ti.nid = ?
+    WHERE ti.tid NOT IN (SELECT tid FROM taxonomy_index GROUP BY tid HAVING count(nid) = 1)`)
+    .pluck()
+    .all(row.nid);
+
+  let image = db.prepare(`SELECT filename, uri FROM field_data_field_image i
+    INNER JOIN file_managed f ON f.fid = i.field_image_fid
+    WHERE i.entity_id = ?`).get(row.nid);
+  if (image) {
+    image.uri = image.uri.replace('public://', 'http://joaquin.axai.mx/files/');
+  }
+
+  fs.mkdir(path, (err) => { });
+  const file = fs.createWriteStream(path + '/index.md', { flags: 'w' });
+  // This is here incase any errors occur
+  file.on('open', function () {
+    file.write('---\n');
+    file.write('title: "' + row.title + '"\n');
+    file.write('date: "' + date.toISOString() + '"\n');
+    file.write('aliases: ' + JSON.stringify(aliases) + '\n');
+    file.write('tags: ' + JSON.stringify(tags) + '\n');
+    file.write('---\n\n');
+    if (image) {
+      file.write(`![${image.filename}](${image.uri})\n\n`)
     }
-    aliases.push(row.alias);
-  }, (err, count) => {
-    if (err) {
-      console.error('Error at complete SELECT alias', err.message);
-      return;
-    }
-    let tags = [];
-    db.each(`SELECT td.name FROM taxonomy_index ti
-      INNER JOIN taxonomy_term_data td ON td.tid = ti.tid AND ti.nid = ?
-      WHERE ti.tid NOT IN (SELECT tid FROM taxonomy_index GROUP BY tid HAVING count(nid) = 1)`,
-    [row.nid], (err, row) => {
-      if (err) {
-        console.error('Error at each SELECT td.name', err.message);
-        return;
-      }
-      tags.push(row.name);
-    }, (err, count) => {
-      fs.mkdir(path, (err) => {
-        if (err) {
-          // Ignore.
-        }
-        const file = fs.createWriteStream(path + '/index.md', { flags: 'w' });
-        file.write('---\n');
-        file.write('title: "' + row.title + '"\n');
-        file.write('date: "' + date.toISOString() + '"\n');
-        file.write('aliases: ' + JSON.stringify(aliases) + '\n');
-        file.write('tags: ' + JSON.stringify(tags) + '\n');
-        file.write('---\n\n');
-        file.write(row.body_value);
-        file.end();
-      });
-      console.log(date, slugify(row.title), JSON.stringify(tags));
-    });
-  })
-}, (err, count) => {
-  // TODO: check if this is a good place to close db.
-  db.close();
+    file.write(row.body_value);
+    file.end();
+  });
+  console.log(date, slugify(row.title), JSON.stringify(tags));
 });
+
+db.close();
 
 function usage() {
   const path = require('path');
