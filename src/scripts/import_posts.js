@@ -32,20 +32,33 @@ db.each('SELECT n.nid, n.title, n.created, b.body_value FROM node n ' +
       console.error('Error at complete SELECT alias', err.message);
       return;
     }
-    fs.mkdir(path, (err) => {
+    let tags = [];
+    db.each(`SELECT td.name FROM taxonomy_index ti
+      INNER JOIN taxonomy_term_data td ON td.tid = ti.tid AND ti.nid = ?
+      WHERE ti.tid NOT IN (SELECT tid FROM taxonomy_index GROUP BY tid HAVING count(nid) = 1)`,
+    [row.nid], (err, row) => {
       if (err) {
-        console.log(path, ' already exists');
+        console.error('Error at each SELECT td.name', err.message);
+        return;
       }
-      const file = fs.createWriteStream(path + '/index.md', { flags: 'w' });
-      file.write('---\n');
-      file.write('title: ' + row.title + '\n');
-      file.write('date: "' + date.toISOString() + '"\n');
-      file.write('aliases: ' + JSON.stringify(aliases) + '\n');
-      file.write('---\n\n');
-      file.write(row.body_value);
-      file.end();
+      tags.push(row.name);
+    }, (err, count) => {
+      fs.mkdir(path, (err) => {
+        if (err) {
+          console.log(path, ' already exists');
+        }
+        const file = fs.createWriteStream(path + '/index.md', { flags: 'w' });
+        file.write('---\n');
+        file.write('title: ' + row.title + '\n');
+        file.write('date: "' + date.toISOString() + '"\n');
+        file.write('aliases: ' + JSON.stringify(aliases) + '\n');
+        file.write('tags: ' + JSON.stringify(tags) + '\n');
+        file.write('---\n\n');
+        file.write(row.body_value);
+        file.end();
+      });
+      console.log(date, slugify(row.title), JSON.stringify(tags));
     });
-    console.log(aliases, date, slugify(row.title));
   })
 }, (err, count) => {
   // TODO: check if this is a good place to close db.
