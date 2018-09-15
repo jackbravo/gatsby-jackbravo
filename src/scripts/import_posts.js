@@ -21,7 +21,7 @@ db.each('SELECT n.nid, n.title, n.created, b.body_value FROM node n ' +
   const path = __dirname + '/../pages/' + slug;
   const date = new Date(row.created * 1000);
   let aliases = [];
-  db.each('SELECT alias FROM url_alias WHERE source = \'node/' + row.nid + '\'', (err, row) => {
+  db.each('SELECT alias FROM url_alias WHERE source = \'node/\' || ?', [row.nid], (err, row) => {
     if (err) {
       console.error('Error at each SELECT alias', err.message);
       return;
