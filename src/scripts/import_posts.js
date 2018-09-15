@@ -12,8 +12,8 @@ let db = new sqlite3.Database(process.argv[2], sqlite3.OPEN_READONLY, (err) => {
   }
 });
 
-db.each('SELECT n.nid, n.title, n.created, b.body_value, n.status FROM node n ' +
-  'INNER JOIN field_data_body b ON b.entity_id = n.nid', (err, row) => {
+db.each(`SELECT n.nid, n.title, n.created, b.body_value, n.status FROM node n
+  INNER JOIN field_data_body b ON b.entity_id = n.nid`, (err, row) => {
   if (err) {
     console.error('Error at each SELECT nid', err.message);
   }
@@ -22,7 +22,7 @@ db.each('SELECT n.nid, n.title, n.created, b.body_value, n.status FROM node n ' 
   const path = __dirname + folder + slug;
   const date = new Date(row.created * 1000);
   let aliases = [];
-  db.each('SELECT alias FROM url_alias WHERE source = \'node/\' || ?', [row.nid], (err, row) => {
+  db.each(`SELECT alias FROM url_alias WHERE source = 'node/' || ?`, [row.nid], (err, row) => {
     if (err) {
       console.error('Error at each SELECT alias', err.message);
       return;
