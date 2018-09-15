@@ -47,6 +47,9 @@ db.each('SELECT n.nid, n.title, n.created, b.body_value FROM node n ' +
     });
     console.log(aliases, date, slugify(row.title));
   })
+}, (err, count) => {
+  // TODO: check if this is a good place to close db.
+  db.close();
 });
 
 function usage() {
