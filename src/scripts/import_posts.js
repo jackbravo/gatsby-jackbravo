@@ -6,9 +6,10 @@ if (process.argv.length < 3) {
   process.exit();
 }
 
-let db = new sqlite3.Database(process.argv[2], sqlite3.OPEN_READONLY, (err) => {
+const db = new sqlite3.Database(process.argv[2], sqlite3.OPEN_READONLY, (err) => {
   if (err) {
-    return console.error(err.message);
+    console.error(err.message);
+    process.exit();
   }
 });
 
