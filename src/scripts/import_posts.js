@@ -13,7 +13,7 @@ let db = new sqlite3.Database(process.argv[2], sqlite3.OPEN_READONLY, (err) => {
 });
 
 db.each('SELECT n.nid, n.title, n.created, b.body_value FROM node n ' +
-  'INNER JOIN field_data_body b ON b.entity_id = n.nid LIMIT 4', (err, row) => {
+  'INNER JOIN field_data_body b ON b.entity_id = n.nid', (err, row) => {
   if (err) {
     console.error('Error at each SELECT nid', err.message);
   }
