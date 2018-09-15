@@ -45,11 +45,11 @@ db.each('SELECT n.nid, n.title, n.created, b.body_value FROM node n ' +
     }, (err, count) => {
       fs.mkdir(path, (err) => {
         if (err) {
-          console.log(path, ' already exists');
+          // Ignore.
         }
         const file = fs.createWriteStream(path + '/index.md', { flags: 'w' });
         file.write('---\n');
-        file.write('title: ' + row.title + '\n');
+        file.write('title: "' + row.title + '"\n');
         file.write('date: "' + date.toISOString() + '"\n');
         file.write('aliases: ' + JSON.stringify(aliases) + '\n');
         file.write('tags: ' + JSON.stringify(tags) + '\n');
