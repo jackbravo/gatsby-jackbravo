@@ -5,7 +5,7 @@ aliases: []
 tags: ["php","drupal"]
 ---
 
-![vimdebugger.png](http://joaquin.axai.mx/files/images/vimdebugger.png)
+![vimdebugger.png](./vimdebugger.png)
 
 UPDATE: cambié el plugin de vim que se utiliza para debuguear por uno más nuevo mantenido en github.
 

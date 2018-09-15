@@ -5,7 +5,7 @@ aliases: []
 tags: ["drupal","php"]
 ---
 
-![geben2.png](http://joaquin.axai.mx/files/images/geben2.png)
+![geben2.png](./geben2.png)
 
 Una de las cosas más útiles que puedes aprender para debuguear un programa en PHP es a usar [xdebug](http://www.xdebug.org/). Y la verdad no es nada complicado.
 

@@ -1,5 +1,6 @@
 const Database = require('better-sqlite3');
 const fs = require('fs');
+const http = require('http');
 
 if (process.argv.length < 3) {
   usage();
@@ -44,7 +45,8 @@ rows.forEach(row => {
     file.write('tags: ' + JSON.stringify(tags) + '\n');
     file.write('---\n\n');
     if (image) {
-      file.write(`![${image.filename}](${image.uri})\n\n`)
+      download(image.uri, path + '/' + image.filename);
+      file.write(`![${image.filename}](./${image.filename})\n\n`);
     }
     file.write(row.body_value);
     file.end();
@@ -59,6 +61,19 @@ function usage() {
   const scriptName = path.basename(__filename);
   console.log('node ' + scriptName + ' <database.sqlite>');
 }
+
+function download(url, dest, callback) {
+  var file = fs.createWriteStream(dest);
+  var request = http.get(url, function(response) {
+    response.pipe(file);
+    file.on('finish', function() {
+      file.close(callback);  // close() is async, call cb after close completes.
+    });
+  }).on('error', function(err) { // Handle errors
+    fs.unlink(dest); // Delete the file async. (But we don't check the result)
+    if (callback) cb(err.message);
+  });
+};
 
 function slugify(string) {
   const a = 'àáäâãåèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;'
