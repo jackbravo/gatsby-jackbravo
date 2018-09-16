@@ -17,9 +17,10 @@ rows.forEach(row => {
   const path = __dirname + folder + slug;
   const date = new Date(row.created * 1000);
 
-  const aliases = db.prepare(`SELECT alias FROM url_alias WHERE source = 'node/' || ?`)
+  const aliases = db.prepare(`SELECT alias FROM url_alias
+    WHERE source = ? AND alias != ?`)
     .pluck()
-    .all(row.nid);
+    .all('node/' + row.nid, slug);
 
   const tags = db.prepare(`SELECT td.name FROM taxonomy_index ti
     INNER JOIN taxonomy_term_data td ON td.tid = ti.tid AND ti.nid = ?
@@ -51,7 +52,7 @@ rows.forEach(row => {
     file.write(row.body_value);
     file.end();
   });
-  console.log(date, slugify(row.title), JSON.stringify(tags));
+  console.log(date, slug, JSON.stringify(aliases));
 });
 
 db.close();
