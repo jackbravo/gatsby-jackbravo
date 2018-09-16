@@ -1,7 +1,7 @@
 ---
 title: "El miedo hiere más que las espadas"
 date: "2011-08-26T18:23:01.000Z"
-aliases: []
+aliases: ["el-miedo-hiere-m-s-que-las-espadas"]
 tags: []
 ---
 

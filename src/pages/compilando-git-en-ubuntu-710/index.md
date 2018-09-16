@@ -1,7 +1,7 @@
 ---
 title: "Compilando git en ubuntu 7.10"
 date: "2008-02-10T23:12:07.000Z"
-aliases: []
+aliases: ["2008/02/10/compilando-git-en-ubuntu-710"]
 tags: ["git","linux","ubuntu"]
 ---
 

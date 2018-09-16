@@ -1,7 +1,7 @@
 ---
 title: "Dell vostro 1510 con ubuntu"
 date: "2008-07-23T01:03:44.000Z"
-aliases: []
+aliases: ["2008/07/22/dell-vostro-1510-con-ubuntu"]
 tags: ["ubuntu"]
 ---
 

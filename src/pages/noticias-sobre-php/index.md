@@ -1,7 +1,7 @@
 ---
 title: "noticias sobre PHP"
 date: "2007-07-25T04:00:00.000Z"
-aliases: []
+aliases: ["2007/07/25/noticias-sobre-php"]
 tags: ["php"]
 ---
 

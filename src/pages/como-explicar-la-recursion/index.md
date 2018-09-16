@@ -1,7 +1,7 @@
 ---
 title: "¿Cómo explicar la recursión?"
 date: "2008-09-19T17:59:04.000Z"
-aliases: []
+aliases: ["2008/09/19/c-mo-explicar-la-recursi-n"]
 tags: ["programacion"]
 ---
 

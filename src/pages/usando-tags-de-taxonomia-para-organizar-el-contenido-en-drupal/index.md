@@ -1,7 +1,7 @@
 ---
 title: "Usando tags de taxonomía para organizar el contenido en drupal"
 date: "2008-08-26T19:26:34.000Z"
-aliases: []
+aliases: ["2008/08/26/usando-tags-de-taxonom-para-organizar-el-contenido-en-drupal"]
 tags: ["drupal","axai"]
 ---
 

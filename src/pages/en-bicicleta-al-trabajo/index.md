@@ -1,7 +1,7 @@
 ---
 title: "En bicicleta al trabajo"
 date: "2008-04-21T05:17:24.000Z"
-aliases: []
+aliases: ["2008/04/21/en-bicicleta-al-trabajo"]
 tags: ["bicicleta"]
 ---
 

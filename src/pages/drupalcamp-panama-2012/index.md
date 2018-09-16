@@ -1,7 +1,7 @@
 ---
 title: "DrupalCamp Panamá 2012"
 date: "2012-09-18T00:00:00.000Z"
-aliases: []
+aliases: ["drupalcamp-panam-2012"]
 tags: ["drupal"]
 ---
 

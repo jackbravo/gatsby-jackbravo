@@ -1,7 +1,7 @@
 ---
 title: "Backups de MySQL con git"
 date: "2008-08-05T16:26:48.000Z"
-aliases: []
+aliases: ["2008/08/05/backups-de-mysql-con-git"]
 tags: ["git","mysql"]
 ---
 

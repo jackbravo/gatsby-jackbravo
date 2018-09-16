@@ -1,7 +1,7 @@
 ---
 title: "Installing Ubuntu codecs (restricted formats)"
 date: "2008-04-29T15:27:25.000Z"
-aliases: []
+aliases: ["2008/04/29/installing-ubuntu-codecs-restricted-formats"]
 tags: []
 ---
 

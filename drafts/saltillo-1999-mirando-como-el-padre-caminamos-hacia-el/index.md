@@ -1,7 +1,7 @@
 ---
 title: "Saltillo 1999, Mirando como el Padre caminamos hacia Él"
 date: "2010-05-22T16:58:19.000Z"
-aliases: []
+aliases: ["saltillo-1999-mirando-como-el-padre-caminamos-hacia-l"]
 tags: []
 ---
 

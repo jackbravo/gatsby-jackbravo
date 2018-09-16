@@ -1,7 +1,7 @@
 ---
 title: "Hacking Business Model"
 date: "2010-03-09T01:28:41.000Z"
-aliases: []
+aliases: ["hacking-business-rules"]
 tags: ["axai"]
 ---
 

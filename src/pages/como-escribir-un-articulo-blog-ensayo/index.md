@@ -1,7 +1,7 @@
 ---
 title: "¿Cómo escribir un artículo / blog / ensayo?"
 date: "2011-02-02T15:58:52.000Z"
-aliases: []
+aliases: ["como-escribir-un-articulo-ensayo-o-blog"]
 tags: ["blogs"]
 ---
 

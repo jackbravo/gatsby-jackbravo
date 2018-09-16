@@ -1,7 +1,7 @@
 ---
 title: "Desarrollo rápido con Drupal"
 date: "2017-05-03T17:52:49.000Z"
-aliases: []
+aliases: ["desarrollo-r-pido-con-drupal"]
 tags: []
 ---
 

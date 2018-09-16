@@ -1,7 +1,7 @@
 ---
 title: "Enemigo público no. 1: La iglesia católica"
 date: "2012-04-12T21:22:03.000Z"
-aliases: []
+aliases: ["enemigo-p-blico-no-1-la-iglesia-cat-lica"]
 tags: ["religion"]
 ---
 

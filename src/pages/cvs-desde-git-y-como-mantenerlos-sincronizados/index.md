@@ -1,7 +1,7 @@
 ---
 title: "CVS desde git, y como mantenerlos sincronizados"
 date: "2008-07-24T15:27:50.000Z"
-aliases: []
+aliases: ["2008/07/24/cvs-desde-git-y-como-mantenerlos-sincronizados"]
 tags: ["git","drupal"]
 ---
 

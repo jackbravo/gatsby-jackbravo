@@ -1,7 +1,7 @@
 ---
 title: "Crear un calendario de grupo con drupal"
 date: "2008-09-10T20:03:59.000Z"
-aliases: []
+aliases: ["2008/09/10/crear-un-calendario-de-grupo-con-drupal"]
 tags: ["drupal","views"]
 ---
 

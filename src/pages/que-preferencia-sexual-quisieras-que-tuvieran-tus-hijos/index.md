@@ -1,7 +1,7 @@
 ---
 title: "¿Qué preferencia sexual quisieras que tuvieran tus hijos?"
 date: "2010-05-20T14:00:16.000Z"
-aliases: []
+aliases: ["qu-preferencia-sexual-quisieras-que-tuvieran-tus-hijos"]
 tags: ["religion"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Un retorno a Hattrick"
 date: "2010-05-22T14:12:58.000Z"
-aliases: []
+aliases: ["un-retorno-hattrickk","un-retorno-hattrick"]
 tags: []
 ---
 

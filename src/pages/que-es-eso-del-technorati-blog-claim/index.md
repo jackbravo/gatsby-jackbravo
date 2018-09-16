@@ -1,7 +1,7 @@
 ---
 title: "¿Que es eso del technorati blog claim?"
 date: "2008-02-07T16:30:22.000Z"
-aliases: []
+aliases: ["2008/02/07/que-es-eso-del-technorati-blog-claim"]
 tags: ["blogs"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "El brazo robótico de Dean Kamen"
 date: "2008-05-31T17:40:33.000Z"
-aliases: []
+aliases: ["2008/05/31/el-brazo-robótico-de-dean-kamen"]
 tags: []
 ---
 

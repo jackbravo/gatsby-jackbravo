@@ -1,7 +1,7 @@
 ---
 title: "Demostración de VIM para edición rápida de archivos "
 date: "2013-03-07T21:11:22.000Z"
-aliases: []
+aliases: ["demostraci-n-de-vim-para-edici-n-r-pida-de-archivos"]
 tags: ["drupal"]
 ---
 
