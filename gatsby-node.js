@@ -40,6 +40,7 @@ exports.createPages = ({ graphql, actions }) => {
           const previous = index === posts.length - 1 ? null : posts[index + 1].node;
           const next = index === 0 ? null : posts[index - 1].node;
 
+          // TODO: https://github.com/getchalk/gatsby-plugin-meta-redirect/issues/3
           if (post.node.frontmatter.aliases) {
             post.node.frontmatter.aliases.forEach(alias => {
               createRedirect({
