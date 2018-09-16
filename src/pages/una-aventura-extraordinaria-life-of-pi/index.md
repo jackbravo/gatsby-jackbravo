@@ -1,7 +1,7 @@
 ---
 title: "Una aventura extraordinaria (Life of Pi)"
 date: "2013-03-12T15:50:33.000Z"
-aliases: []
+aliases: ["una-aventura-extraordinaria-life-pi"]
 tags: []
 ---
 
