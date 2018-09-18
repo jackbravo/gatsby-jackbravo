@@ -1,10 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
-import get from 'lodash/get'
+import get from 'lodash'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
+import Tags from '../components/tags'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
@@ -31,6 +32,7 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           {post.frontmatter.date}
+          <Tags tags={post.frontmatter.tags} />
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -87,6 +89,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
       }
     }
   }

@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
+import Tags from '../components/tags'
 import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
@@ -37,7 +38,10 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small>
+                {node.frontmatter.date}
+                <Tags tags={node.frontmatter.tags} />
+               </small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
@@ -67,6 +71,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            tags
           }
         }
       }
