@@ -1,6 +1,8 @@
 import Typography from 'typography'
 
-const typography = new Typography()
+const typography = new Typography({
+  baseFontSize: '18px',
+})
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== 'production') {
