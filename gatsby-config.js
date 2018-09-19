@@ -4,6 +4,7 @@ module.exports = {
     author: 'Joaquín Bravo Contreras',
     description: 'Sobre tecnología y otras curiosidades.',
     siteUrl: 'https://joaquin.axai.mx/',
+    disqusShortname: 'gaceta-de-la-cabeza',
   },
   pathPrefix: '/',
   plugins: [

@@ -6,12 +6,20 @@ import get from 'lodash'
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import Tags from '../components/tags'
+import { DiscussionEmbed } from 'disqus-react'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const post = this.props.data.markdownRemark;
+    const siteUrl = this.props.data.site.siteMetadata.siteUrl;
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const disqusShortname = this.props.data.site.siteMetadata.disqusShortname;
+    const disqusConfig = {
+      url: siteUrl + post.fields.slug.slice(1),
+      identifier: post.id,
+      title: post.frontmatter.title,
+    };
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
 
@@ -67,6 +75,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </Layout>
     )
   }
@@ -78,14 +87,19 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
+        siteUrl
         title
         author
+        disqusShortname
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
