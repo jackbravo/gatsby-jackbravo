@@ -13,7 +13,7 @@ class Bio extends React.Component {
       <div
         style={{
           display: 'flex',
-          marginBottom: rhythm(2.5),
+          marginBottom: rhythm(1),
         }}
       >
         <img
@@ -27,9 +27,9 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Soy un desarrollador mexicano. Soy fan del software libre, sobre todo aplicado al Internet.
-          Juego futbol cada que puedo. Me gusta andar en bici y leer (cuando mis hijos me dejan).
-          Todavía creo en la buena voluntad de las personas y todavía más con mi linda esposa Lix =).
+          <strong>Joaquín Bravo Contreras</strong> es un desarrollador mexicano.
+          Juega futbol cada que puede. Le gusta andar en bici y leer (cuando sus hijos lo dejan).
+          Todavía cree en la buena voluntad de las personas.
         </p>
       </div>
     )
