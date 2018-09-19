@@ -2,7 +2,7 @@
 title: "El niño robot"
 date: "2011-02-05T16:11:15.000Z"
 aliases: []
-tags: []
+tags: ["cuentos"]
 ---
 
 Cuando era pequeño recuerdo que yo era un robot. No como quien jugando se imagina que es un robot del futuro o algo así. No, yo realmente era un robot.
