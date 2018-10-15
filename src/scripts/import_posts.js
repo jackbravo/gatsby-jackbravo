@@ -38,12 +38,12 @@ rows.forEach(row => {
   fs.mkdir(path, (err) => { });
   const file = fs.createWriteStream(path + '/index.md', { flags: 'w' });
   // This is here incase any errors occur
-  file.on('open', function () {
+  file.on('open', () => {
     file.write('---\n');
-    file.write('title: "' + row.title + '"\n');
-    file.write('date: "' + date.toISOString() + '"\n');
-    file.write('aliases: ' + JSON.stringify(aliases) + '\n');
-    file.write('tags: ' + JSON.stringify(tags) + '\n');
+    file.write(`title: ${row.title}\n`);
+    file.write(`date: ${date.toISOString()}\n`);
+    file.write(`aliases: ${JSON.stringify(aliases)}\n`);
+    file.write(`tags: ${JSON.stringify(tags)} + '\n`);
     file.write('---\n\n');
     if (image) {
       download(image.uri, path + '/' + image.filename);
@@ -60,7 +60,7 @@ db.close();
 function usage() {
   const path = require('path');
   const scriptName = path.basename(__filename);
-  console.log('node ' + scriptName + ' <database.sqlite>');
+  console.log(`node ${scriptName} <database.sqlite>`);
 }
 
 function download(url, dest, callback) {

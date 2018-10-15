@@ -64,11 +64,11 @@ db.close();
 function usage() {
   const path = require('path');
   const scriptName = path.basename(__filename);
-  console.log('node ' + scriptName + ' <database.sqlite>');
+  console.log(`node ${scriptName} <database.sqlite>`);
 }
 
 function getDisqusDate(date) {
-  return date.toISOString().slice(0, 10) + ' ' + date.toISOString().slice(11, 19);
+  return `${date.toISOString().slice(0, 10)} ${date.toISOString().slice(11, 19)}`;
 }
 
 function slugify(string) {
