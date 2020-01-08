@@ -1,5 +1,5 @@
 ---
-title: "Mis propósitos para el 2020"
+title: "Mis propósitos para el 2017"
 date: "2017-02-04T16:11:39.000Z"
 aliases: []
 tags: [propósitos]
