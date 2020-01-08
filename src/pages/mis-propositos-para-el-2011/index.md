@@ -2,7 +2,7 @@
 title: "Mis propósitos para el 2011"
 date: "2011-01-04T16:11:39.000Z"
 aliases: []
-tags: []
+tags: [propósitos]
 ---
 
 Personales
