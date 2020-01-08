@@ -7,6 +7,7 @@ if (process.argv.length < 3) {
   process.exit();
 }
 
+// argv[2] would be the first argument passed to > node src/scripts/import.js [database.db]
 const db = new Database(process.argv[2], {readonly: true});
 
 const rows = db.prepare(`SELECT n.nid, n.title, n.created, b.body_value, n.status FROM node n
@@ -15,6 +16,7 @@ rows.forEach(row => {
   const slug = slugify(row.title);
   const folder = row.status ? '/../pages/' : '/../../drafts/';
   const path = __dirname + folder + slug;
+  // timestamp in drupal is in seconds, Date() expects microseconds
   const date = new Date(row.created * 1000);
 
   const aliases = db.prepare(`SELECT alias FROM url_alias
@@ -57,6 +59,7 @@ rows.forEach(row => {
 
 db.close();
 
+// taken from: https://stackoverflow.com/a/22907134/9055
 function usage() {
   const path = require('path');
   const scriptName = path.basename(__filename);
@@ -76,6 +79,7 @@ function download(url, dest, callback) {
   });
 };
 
+// taken from: https://gist.github.com/matthagemann/382adfc57adbd5af078dc93feef01fe1
 function slugify(string) {
   const a = 'àáäâãåèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;'
   const b = 'aaaaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------'
