@@ -1,15 +1,15 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
+  "name": "jackbravo-starter-blog",
+  "description": "Starter jackbravo Blog",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Joaquin Bravo <jackbravo@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
   "dependencies": {
     "better-sqlite3": "^4.2.0",
     "disqus-react": "^1.0.7",
-    "gatsby": "^2.18.18",
+    "gatsby": "^2.32.13",
     "gatsby-plugin-feed": "^2.3.25",
     "gatsby-plugin-google-analytics": "^2.1.31",
     "gatsby-plugin-manifest": "^2.2.34",
