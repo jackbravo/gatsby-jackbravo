@@ -3,7 +3,7 @@ module.exports = {
     title: 'La gaceta de la cabeza',
     author: 'Joaquín Bravo Contreras',
     description: 'Sobre tecnología y otras curiosidades.',
-    siteUrl: 'https://joaquin.axai.mx/',
+    siteUrl: 'https://jackbravo.github.io/',
     disqusShortname: 'gaceta-de-la-cabeza',
   },
   pathPrefix: '/',

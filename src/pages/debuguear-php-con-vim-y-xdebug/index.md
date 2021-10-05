@@ -9,7 +9,7 @@ tags: ["php","drupal"]
 
 UPDATE: cambié el plugin de vim que se utiliza para debuguear por uno más nuevo mantenido en github.
 
-El día de hoy estuve probando varios IDEs para PHP, porque quería debuguear un script con XDebug en lugar de utilizando echos, krumos y exits. Es decir, me quería ver más fresón. Y me daba flojera utilizar emacs que es lo que antes he descrito que puedes utilizar para [debuguear PHP](http://joaquin.axai.mx/debuguear-php-con-emacs-xdebug-y-geben). Así que me bajé y probé:
+El día de hoy estuve probando varios IDEs para PHP, porque quería debuguear un script con XDebug en lugar de utilizando echos, krumos y exits. Es decir, me quería ver más fresón. Y me daba flojera utilizar emacs que es lo que antes he descrito que puedes utilizar para [debuguear PHP](/debuguear-php-con-emacs-xdebug-y-geben). Así que me bajé y probé:
 
 - [NetBeans](http://netbeans.org/kb/docs/php/debugging.html). El más lento de los 3.
 - [PHPStorm](http://www.jetbrains.com/phpstorm/). El más fácil de configurar pero con la interfáz más rara.
@@ -27,7 +27,7 @@ Y listo, cuando quieres debuguear simplemente preparas vim con F5 para que esté
 
 El debugger de vim tiene los shortcuts en una de sus ventanas así que es muy sencillo de aprender. Los breakpoints funcionan muy bien, e inspeccionar variables también, así que no hay excusas para no usar xdebug ahora.
 
-Si estas usando xdebug con fpm o fastcgi en el puerto 9001 (como describo en un [post anterior](http://joaquin.axai.mx/debuguear-php-con-emacs-xdebug-y-geben)), entonces necesitas configurar el plugin de vim para escuchar este puerto poniendo esta línea en tu .vimrc:
+Si estas usando xdebug con fpm o fastcgi en el puerto 9001 (como describo en un [post anterior](/debuguear-php-con-emacs-xdebug-y-geben)), entonces necesitas configurar el plugin de vim para escuchar este puerto poniendo esta línea en tu .vimrc:
 
     let g:debuggerPort = 9001
 

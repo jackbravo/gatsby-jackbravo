@@ -22,7 +22,7 @@ __Programación web__. Es lo que más hacemos, nos estarías ayudando a programa
 __Programador de aplicaciones__
 Necesitamos alguien que sepa o no le intimide programar en C y C++. Aquí vas a programar interfaces para pruebas de un co-procesador de video para (hint hint, guiño guiño) importante empresa.
 
-Dudas pues me pueden contactar por [aquí](http://joaquin.axai.mx/contact) o directo en la de [axai](http://axai.com.mx/contact) y pues si conocen a alguien que le interese le platican también.
+Dudas pues me pueden contactar por [aquí](http://axai.com.mx/contact) y pues si conocen a alguien que le interese le platican también.
 
 ---
 
